@@ -1,0 +1,499 @@
+/* Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+
+html {
+	height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+body {
+	font: 12px/18px Arial, sans-serif;
+	height: 100%;
+}
+.wrapper {
+	width: 100%;
+	min-width: 1000px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header {
+	background-color: #000000;
+	background: -webkit-gradient(linear, left center, right center, from(#000000), to(#000000), color-stop(.5,#919191));
+	background: -moz-linear-gradient(left, #000000 0%, #919191 50%, #000000 100%); 
+	height: 50px;	
+}
+.header p {
+	color:#fff;
+	font:normal 24px Arial; 
+	float:left;
+	padding-left: 20px;
+	padding-top: 13px;
+}
+.rightTabs{
+	float:right;
+	padding-right:20px;
+	padding-top: 15px;
+}
+.rightTabs a { 
+	display:block;
+	color:#fff; 
+	padding:2px; 
+	font:normal 14px Arial; 
+	text-decoration:none;
+	
+	padding-right:8px;
+	padding-left:35px; 
+}
+.rightTabs li{
+	  list-style:none;
+	  float:left;
+}
+
+#shareview
+{
+	/*position: absolute;*/
+	width:640px;
+	height:700px;
+}
+
+
+#drawingview {
+	position: relative;
+	width:640px;
+	height:700px;
+	margin: 0;
+	padding: 0;
+	pointer-events: none;
+	top: -700px;
+}
+/* Middle
+-----------------------------------------------------------------------------*/
+
+
+/* tools bar buttons */
+.toolsBarTabs{
+	float:left;
+	padding-left:15px;
+	padding-top: 25px;
+}
+.toolsBarTabs a{
+	color:#000000;
+	padding:2px; 
+	font:normal 18px Arial; 
+	text-decoration:none;
+	padding-right:8px;
+	padding-left:30px; 
+}
+.toolsBarTabs li{
+	vertical-align: bottom;
+	list-style:none;
+	margin-left: 8px;
+	height: 70px;
+	display:inline; 
+}
+/* alert */
+.alertView{
+	background-image:url('../images/alert1.png');
+	width:207px;
+	height:118px;
+	position:absolute;
+	margin-top:50px; 
+	margin-left:410px; 
+}
+.alertNoButton{
+	color:#4B64B7;
+	position:absolute;
+	font:normal 17px Arial;
+	text-decoration: none;
+	padding-left:40px; 
+	margin-top:85px;
+	
+}
+.alertYesButton{
+	color:#4B64B7;
+	position:absolute;
+	font:normal 17px Arial;
+	text-decoration: none;
+	padding-left:140px; 
+	margin-top:85px;
+	
+}
+.rectangleWorkSpace{
+	width:640px;
+	height:810px;
+	border: 2px solid #003748;
+	overflow: hidden;	
+}
+
+.liveAssistActionBar{
+	left: 50%;
+	top: -700px;
+	display: block;
+	position: relative;
+	margin-left: -100px;
+}
+
+
+.liveAssistActionBar ul{
+	/*position:absolute;*/
+	bottom:20%;
+	left:28%;
+
+}
+.liveAssistActionBar li{
+
+	margin-left: 40px;
+	display:inline; 
+
+}
+
+#accordion .ui-accordion-header
+{
+	background-color: #000000;
+	background: -webkit-gradient(linear, left center, right center, from(#000000), to(#000000), color-stop(.5,#919191));
+	background: -moz-linear-gradient(left, #000000 0%, #919191 50%, #000000 100%);
+	font:normal 17px Arial; 
+	font-weight: bold;
+	color:#FFFFFF;
+	padding-left:10px; 
+}
+#accordion .ui-accordion-header.ui-state-active 
+{
+	background-color: #000000;
+	background: -webkit-gradient(linear, left center, right center, from(#000000), to(#000000), color-stop(.5,#FFFFFF));
+	background: -moz-linear-gradient(left, #000000 0%, #FFFFFF 50%, #000000 100%);
+	color:#000000;
+	font:normal 17px Arial; 
+	font-weight: bold;
+	padding-left:10px; 
+}
+#accordion .ui-icon { display: none; }
+
+.inputBox{
+	
+	width: 230px;
+	height: 30px;
+	margin-top:10px;
+	background-color: #FFFFFF;
+	background: -webkit-gradient(linear, left center, right center, from(#919191), to(#FFFFFF));
+	background: -moz-linear-gradient(left, #919191 0%, #FFFFFF 100%);
+
+}
+.sendButton
+{
+	position: absolute;
+	margin-top:10px;
+	
+	margin-left:20px;
+}
+/*box */
+.centerSharingBoxRequest{
+    position: relative;
+    top: 20%; 
+    left: 50%; 
+    margin-left: -190px;
+    margin-top: -110px;
+    z-index: 999999;
+}
+
+.tab {
+	margin-bottom: -2px;
+	padding-bottom: 0px;
+	margin-left: 40px;
+	cursor: pointer;
+	display: inline-block;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
+.selected-tab {
+	border: 2px solid black;
+	border-bottom-color: white;
+}
+
+/* --------------- right area ---------------- */
+.right {
+	float: right;
+	padding-right:20px;
+	padding-top:40px;
+}
+.videoViews{
+	position: relative;
+	background-color: black;
+	height: 250px;
+	width: 460px;
+}
+
+.videoRequest {
+	position: relative;
+	background-color: black;
+	height: 250px;
+	width: 460px;
+}
+
+.videoRequestPlaceholer {
+	position: relative;
+	background-color: black;
+	height: 250px;
+	width: 460px;
+}
+
+.videoview {
+	
+	position: absolute;
+    height: 250px;
+	width: 460px;
+}
+.preview {
+	position: absolute;
+    width: 100px;
+	height:75px;
+	right: 0;
+	bottom: 0;
+	background-color: black;
+}
+/* chat */
+.rectangleActionChat{
+	position: relative;
+	border: 2px solid #003748;
+	width:460px;
+	height:575px;
+	margin-top:8px;
+}
+.userPic{
+	margin-top:10px;
+	margin-left:10px;
+}
+.rectangleActionChat h1{
+	font:normal 20px Arial;
+	position: absolute;	
+	font-weight: bold;
+	color:#00000;
+	display:inline; 
+	margin-top: 10px;
+	margin-left:12px;
+}
+.rectangleActionChatMemberNumber{
+	font:normal 17px Arial;
+	font-weight: bold;
+	position: absolute;	
+	color:#00000;
+	display:inline; 
+	margin-top: 35px;
+	margin-left:12px;
+}
+.rectangleActionChatMembersince{
+	font:normal 17px Arial;
+	font-weight: bold;
+	position: absolute;	
+	color:#00000;
+	display:inline; 
+	margin-top: 50px;
+	margin-left:12px;
+}
+.purchasesActionTab{
+
+}
+
+.purchasesActionTab li{
+	  list-style:none;
+	  float:left;
+	  color:#649eb7; 
+	  font:normal 12px Arial; 
+	  font-weight: bold;
+	  padding-left:13px; 
+	  cursor: pointer;
+}
+.box
+{
+	background-color: #000000;
+	height: 220px;
+	width: 380px;
+}
+.box p{
+	display:inline; 
+	color:#fff;
+	font:normal 18px Arial; 
+	line-height: 4.0;
+	margin-left: 10px;
+}
+.box textarea{
+	display:inline;
+	margin-right: 25px;
+	font:normal 16px Arial; 
+	margin-top:20px;
+    resize: none;
+	float:right;
+	width: 230px;
+	background-color: #FFFFFF;
+	background: -webkit-gradient(linear, left center, right center, from(#919191), to(#FFFFFF));
+	background: -moz-linear-gradient(left, #919191 0%, #FFFFFF 100%);
+	border: none;
+}
+
+.box a{
+	float:right;
+	padding-right:25px;
+	padding-top:15px;
+}
+
+.sharingBoxRequsetTitleSize{
+	
+	height: 30px;
+}
+.sharingBoxRequsetMessageSize{
+	height: 60px;
+}
+.tab-content {
+	height: 810px;
+	width: 640px;
+}
+
+.call-terminate-icon {
+	position:relative; 
+	float:left; 
+	width: 31px; 
+	height:31px; 
+	background-repeat: no-repeat;
+	background-image: url(../images/icon-x.png);
+	cursor: pointer;
+}
+
+.la-terminate-icon {
+	position:absolute; 
+	width: 31px; 
+	height:31px; 
+	background-repeat: no-repeat;
+	background-image: url(../images/icon-x.png);
+	cursor: pointer;
+	z-index: 99999;
+}
+
+
+/* ---- Chat ----*/
+.recieverName
+{
+	color:#434343;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+.recieverMsg
+{
+	padding: 5px;
+	background-color: #FFFFFF;
+	border: 2px solid #ACACAC;  
+	color: #434343;
+	width: 270px;
+	border-radius: 5px;
+}
+.senderName
+{
+color: #434343;
+margin-right: 10px;
+align: right;
+text-align: right;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.senderMsgContainer {
+
+}
+
+.senderMsg
+{
+	width: 270px;
+	color: #000000;
+	border-radius: 5px;
+	background-color: #BBBBBB;
+	padding: 5px;
+	text-align: left;
+}
+
+.case-notes-content {
+    height: 250px;
+    overflow: scroll;
+}
+
+.case-notes-content-image {
+	background-image: url(../images/content-case-notes.png);
+	background-size: cover;
+	overflow: hidden;
+	height: 350px;
+}
+
+
+.support-history-content {
+	height: 250px;
+    overflow: scroll;
+}
+
+.support-history-content-image {
+	background-image: url(../images/content-support-history.png);
+    height: 385px;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.links-list {
+	padding: 10px;
+	list-style: square;
+}
+
+.links-list li {
+	cursor: pointer;
+}
+
+.documents-list {
+	padding: 10px;
+	list-style: square;
+}
+
+.documents-list li {
+	cursor: pointer;
+}

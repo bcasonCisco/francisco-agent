@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Mobile Advisor - Agent </title>
+
+	<link href="./css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/jquery-ui.css">
+	
+	<!-- demo config -->
+	<script src="../../maConfig"></script>
+	
+	<!-- jquery -->
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui.js"></script>
+	
+	<!-- MA javascript -->
+	<script type="text/javascript" src="./js/mobileAdvisor.js"></script>
+	
+<!-- live assist -->
+	<script src="/gateway/adapter.js"></script>
+	<!-- <script src="/gateway/fusion-client-sdk.js"></script> -->
+	<script src="/gateway/fcsdk-aed.js"></script>
+	<script src="/gateway/adapter.js"></script>
+	<script src="/gateway/fcsdk-common.js"></script>
+	
+	
+</head>
+<body>
+<div class="wrapper">
+	<header class="header">
+		<p> Mobile Advisor - Agent DASHBOARD </p>
+		<div class="rightTabs">
+			<ul>
+				<li><a href="#"> PROFILE </a></li>
+				<li><a href="#"> DOCUMENTATION </a></li>
+				<li><a href="#"> LOGOUT </a></li>
+			</ul>
+		</div>
+	</header><!-- .header -->
+    <div class="right">
+	<!--------------------- Video elements ----------------------------------->
+		<div class="videoViews" style="display:none;">
+			<div class="call-terminate-icon" style="">&nbsp;</div>
+			<!-- remote video -->
+			<video  class="videoview" id="remote" src="" autoplay ></video> 
+			<!-- local video -->
+			<video class="preview" id="local" src="" autoplay ></video>
+		
+		</div>
+		<div align="center" class="videoRequest display-in-session" >
+			<div class="box">
+				<p>TITLE: </P>
+				<textarea class="sharingBoxRequsetTitleSize" name="Text1" cols="40" rows="1"  readonly>Start Video Call?</textarea>
+			
+				<p>MESSAGE: </P>
+				<textarea class="sharingBoxRequsetMessageSize" name="Text1" cols="50" rows="5"  readonly>You will see me but your camera will be OFF to start.</textarea>
+				<a href="#"  onclick="sendStartVideoCallRequest.call(this);"> <img src="images/send-request.png" alt="send-request" width="130" height="35"/> </a>
+			</div>
+		</div>
+		<div align="center" class="videoRequestPlaceholer display-out-of-session" >
+			&nbsp;
+		</div>
+		<!--accordion object -->
+		<div class="rectangleActionChat" >
+			<span class="display-in-session">
+				<!-- user details -->
+				<img class="userPic" src="images/generic-person-placeholder.png" alt="userPic" width="100" height="75"/>
+				<h1> Jon Suchecki</h1>
+				<h2 class="rectangleActionChatMemberNumber"> Member # 555 423 3545 </h2>
+				<h2 class="rectangleActionChatMembersince">  Member since: 2/10/2012</h2>
+			</span>
+			<span class="display-out-of-session">
+				<!-- user details -->
+				<img class="userPic" src="images/generic-person-placeholder.png" alt="userPic" width="100" height="75"/>
+				<h1> Waiting for incoming request from customer... </h1>
+				<h2 class="rectangleActionChatMemberNumber">&nbsp;</h2>
+				<h2 class="rectangleActionChatMembersince">&nbsp;</h2>
+			</span>
+			<!-- accordion -->
+			<div id="accordion">
+				<center><h3>Chat</h3></center>
+				<div>
+					<div class="display-in-session">
+						<div class="chat-msgs-container" style="overflow: auto; height: 250px; width: 100%;">
+							<div class='senderMsgContainer persistent-msg' align='right'>
+								<p class='senderName'>Brad</p>
+								<p class='senderMsg'>Hello my name is Brad, how can I help you?</p>
+							</div>
+						</div>
+						<input class="inputBox chatInput" id="Text1" type="textarea" value="" />
+						<a class="sendButton" href="#"> <img   src="images\send.png" alt="send-button" width="70" height="35"/></a>
+					</div>
+				</div>
+				<center><h3>Purchases</h3></center>
+					<div>
+						<div class="display-in-session">
+							<h4> Recent Purchases: </h4>
+							<p style="margin-top:10px;">  <img  style="margin-right:8px;"   src="images\tv.PNG" alt="send-button" width="93" height="66"  align="left"/> Samsung 32" LED TV  <br> Model# UN32EH500FXZA <br> SKU#483356
+							 <br><br>   
+							 <hr>
+							</p>
+							<p style="margin-top:5px;">  <img  style="margin-right:8px;"   src="images\reciver.PNG" alt="send-button" width="116" height="52"  align="left"/> Pioneer ELITE Multi Channel Receicer  <br> Model# 27 <br> SKU#415394
+							 <br> <br> 
+							</p>
+							<p> Purchased:02/14/2010 Gold Protection pain- 05/14/2014 </p>
+							<div class="purchasesActionTab">
+								<ul>
+									<li onclick="LiveAssistAgentSDK.docSelected('/FranciscoTechDemo/getFile?name=operator-manual.pdf');"> Operator Manual </li>
+									<li> User Guide      </li>
+									<li> Image Front     </li>
+									<li> Image Back       </li>
+								</ul>
+							</div>
+							<br> 
+							<hr>
+							<p style="margin-top:4px;">  <img  style="margin-right:8px;"   src="images\speakers.PNG" alt="send-button" width="107" height="52"  align="left"/> Bose - 161 Speakers  <br> Model# 161 
+							</p>						
+						</div>
+					</div>
+			   <center><h3>Support History</h3></center>
+					<div>
+						<div class="support-history-content display-in-session">
+							<div class="support-history-content-image">&nbsp;</div>
+					</div>	
+					</div>
+			   <center><h3>Case Notes</h3></center>
+					<div>
+						<div class="case-notes-content display-in-session">
+							<div class="case-notes-content-image">&nbsp;</div>
+						</div>
+					</div>
+			</div>
+		</div> <!-- end rectangleActionChat -->
+		
+	</div> <!--end right -->
+	<!-- rectangle works Space draw-->
+		<div style="padding-left: 50px; padding-top: 20px;" width="50%" >
+			
+			
+		
+		
+			
+			<span id="screenshare-tab" class="tab selected-tab" onclick="navigate(this);" > SHARED SCREEN </span>
+			<span id="documents-tab" class="tab"  onclick="navigate(this);"> DOCUMENTS </span>
+			<span id="links-tab" class="tab" onclick="navigate(this);" > LINKS </span>
+			
+			<span class="display-in-session" style="margin-left: 115px;"><a href="#" class="endSessionButton" onclick="endSession();"> <img src="images/end-session.png" alt="end-session" width="170" height="30"/>  </a></span>
+			
+			<div class="rectangleWorkSpace">
+				<div  class="display-in-session">
+					<div class="tab-content" id="screenshare-content">
+						<div class="box centerSharingBoxRequest">
+							<p>TITLE: </P>
+							<textarea class="sharingBoxRequsetTitleSize" name="Text1" cols="40" rows="1"  readonly>Start Sharing Your Screen?</textarea>
+						
+							<p>MESSAGE: </P>
+							<textarea class="sharingBoxRequsetMessageSize" name="Text1" cols="50" rows="5"  readonly>I'll be able to see and control your screen so we can co-shop.</textarea>
+							<a href="#"  onclick="sendShareRequest.call(this);"> <img src="images/send-request.png" alt="send-request" width="130" height="35"/> </a>
+						</div>
+						<div class="la-terminate-icon" style="display: none;">&nbsp;</div>
+						<div id="shareview"></div>
+						<canvas id="drawingview" height="700" width="640"></canvas>
+						<span class="liveAssistActionBar" style="display: none;">
+							<ul>
+								<li id="controlbutton"><a href="#"> <img src="images/icon-pointer.png" alt="pointer" width="40" height="40"/>  </a></li>
+							
+								<li class="button" id="drawbutton"><a href="#"> <img src="images/icon-pencil.png" alt="pencil" title="Draw" width="40" height="40"/>  </a></li>
+								<li class="button" id="clearbutton"><a href="#"> <img src="images/icon-trashcan.png" alt="end-session" width="40" height="40"/>  </a></li>
+							</ul>
+						</span>
+					</div>
+					<div class="tab-content" id="documents-content"><ul class="documents-list"></ul></div>
+					<div class="tab-content" id="links-content"><ul class="links-list"></ul></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- .wrapper -->
+
+	<script src="./js/liveassist-console.js"></script>
+<script>
+		$(document).ready(
+				function() {
+					
+					
+					
+					$( "#accordion" ).accordion();
+					
+				
+					$(".tab").click(function(){
+						var selected = $(".selected-tab");
+						
+						$(selected[0]).removeClass("selected-tab");  //remove selected
+						$(this).toggleClass("selected-tab"); //select span
+					});
+				
+					$(".display-in-session").hide();
+					
+					$(".sendButton").click(function() {
+						sendChatMessage();
+					});
+					$(".sendButton").keypress(function( event ) {
+						  if ( event.which == 13 ) {
+							  sendChatMessage();
+						     event.preventDefault();
+						  }
+					});
+					$(".chatInput").keypress(function( event ) {
+						  if ( event.which == 13 ) {
+							  sendChatMessage();
+						     event.preventDefault();
+						  }
+					});
+					
+					$.ajax({
+						url: "/francisco-retail-resources/doclist",
+						dataType: "json",
+						success: function(data) {
+							if (data == null || data.length == 0) {
+								$('#documents-content').append('There are no documents available on this server.');
+								return;
+							}
+							data.sort();
+							for (var i = 0; i < data.length; i++) {
+								//$('.documents-list').append('<li><a href="#" onclick="LiveAssistAgentSDK.docSelected(\'/francisco-retail-resources/getFile?name=' + data[i] + '\');">' + data[i] + '</a></li>')
+								$('.documents-list').append('<li><a href="#" onclick="LiveAssistAgentSDK.docSelected(\'/francisco-retail-resources/' + data[i] + '\');">' + data[i] + '</a></li>')
+							}
+						}
+					});
+					
+					$.ajax({
+						url: "/francisco-retail-resources/links.xml",
+						dataType: "xml",
+						success: function(xml) {
+							$(xml).find('link').each(function(){
+								var url = $(this).attr('url');
+								var text = $(this).attr('text');
+								console.log("link: url=" + url + ", text=" + text);
+								$('.links-list').append('<li><a href="#" onclick="LiveAssistAgentSDK.linkSelected(\'' + url + '\');">' + text + '</a></li>')
+								console.log("document url= "+ url);
+								console.log("test url= "+ text);
+							});					
+						}
+					});
+					
+					navigate();
+		});
+		//$(window).on('unload', function() {
+		    
+			//endSession();
+
+		//});
+
+	</script>
+</body>
+</html>
